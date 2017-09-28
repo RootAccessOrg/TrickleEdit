@@ -1,0 +1,10 @@
+{
+    "manifest_version": 2,
+    "name": "TrickleEdit",
+    "version": "0.1",
+
+    "content_scripts": [{
+        "matches": ["*://meta.superuser.com/*"],
+        "js": ["js/content-script.js"]
+    }]
+}
