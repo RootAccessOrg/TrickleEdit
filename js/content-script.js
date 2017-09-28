@@ -1,5 +1,3 @@
-console.log('loaded');
-
 function addQueueButton() {
     let saveButtons = document.querySelectorAll('[value="Save Edits"]');
     saveButtons.forEach(button => {
@@ -22,6 +20,5 @@ let observer = new MutationObserver((mutations, observer) => {
 
 observer.observe(document, {
     subtree: true,
-    childList: true,
-    characterData: true
+    childList: true
 });
