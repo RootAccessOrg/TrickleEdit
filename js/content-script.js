@@ -1,7 +1,26 @@
+function shouldAddQueueButton(saveButton) {
+    if (saveButton.parentElement.querySelector('.queue-edit-button')) {
+        // already have one
+        return false;
+    }
+
+    let node = saveButton.parentElement;
+    while (node) {
+        if (node.classList.contains('postcell')) {
+            // exclude answers and comments, see https://github.com/RootAccessOrg/TrickleEdit/issues/2
+            // answers are answercell while comments aren't in a cell
+            return true;
+        }
+        node = node.parentElement;
+    }
+    
+    return false;
+}
+
 function addQueueButton() {
     let saveButtons = document.querySelectorAll('[value="Save Edits"]');
     saveButtons.forEach(button => {
-        if (!button.parentNode.querySelector('.queue-edit-button')) {
+        if (shouldAddQueueButton(button)) {
             let queueButton = document.createElement('input');
             queueButton.type = 'button';
             queueButton.value = 'Queue Edits';
