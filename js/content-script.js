@@ -27,7 +27,22 @@ function addQueueButton() {
             queueButton.classList.add('queue-edit-button');
             button.parentNode.insertBefore(queueButton, button.nextSibling);
             button.parentNode.insertBefore(document.createTextNode(" "), queueButton);
+
+            queueButton.addEventListener('click', function(event) {
+                addEditToQueue(new FormData(this.form));
+            });
         }
+    });
+}
+
+function addEditToQueue(formData) {
+    let data = {};
+    for (let pair of formData) {
+        data[pair[0]] = pair[1];
+    }
+    browser.runtime.sendMessage({
+        action: "enqueue",
+        data: data
     });
 }
 

@@ -6,5 +6,9 @@
     "content_scripts": [{
         "matches": ["*://meta.superuser.com/*"],
         "js": ["js/content-script.js"]
-    }]
+    }],
+
+    "background": {
+        "scripts": ["js/background-script.js"]
+    }
 }
