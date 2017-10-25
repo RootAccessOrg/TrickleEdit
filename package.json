@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/RootAccessOrg/TrickleEdit#readme",
   "jspm": {
-    "dependencies": {},
+    "dependencies": {
+      "dexie": "npm:dexie@^2.0.1"
+    },
     "devDependencies": {
       "typescript": "npm:typescript@^2.0.7"
     }

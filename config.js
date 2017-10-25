@@ -8,6 +8,7 @@ System.config({
   },
 
   map: {
+    "dexie": "npm:dexie@2.0.1",
     "typescript": "npm:typescript@2.5.3",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
@@ -188,6 +189,9 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.1",
       "inherits": "npm:inherits@2.0.1",
       "minimalistic-assert": "npm:minimalistic-assert@1.0.0"
+    },
+    "npm:dexie@2.0.1": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:diffie-hellman@5.0.2": {
       "bn.js": "npm:bn.js@4.11.8",
